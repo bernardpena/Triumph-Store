@@ -38,6 +38,7 @@ nav {
     background: var(--fondoNav);
     width: 100%;
     height: 50px;
+    
 }
 
 nav{
@@ -54,6 +55,10 @@ nav  .section1{
     align-items: center;
 }
 
+ul{
+    display: none;
+}
+
 .logo{
     padding-left: 10px;
     width: 15%;
@@ -66,7 +71,6 @@ nav .menu-hamburguesa{
 
 section{
     grid-area: filtro;
-
 }
 
 .filterContainer{
@@ -141,7 +145,7 @@ main {
 footer {
     grid-area: footer;
     width: 100%;
-    background: var(--fondoNav);
+    background: var(--fondoFooter);
     color: var(--fondoBusqueda);
     padding: 10px 0px;
 }
@@ -162,22 +166,71 @@ footer span{
 }
 
 /*Medias Query*/
+@media (min-width: 576px) {
+    .grid-container{
+        grid-template-columns: 220px 1fr;
+        grid-template-rows: 80px 1fr 80px;
+        grid-template-areas: 
+        'nav filtro'
+        'nav productos'
+        'footer productos';
+    }
 
-@media (min-width :  567px) {
-    .contendero-grid{
-    grid-template-columns: 1fr 1fr
+    nav{
+        height: 93vh;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .section1{
+        justify-content: center;
+    }
+
+    .logo{
+        margin-left: 0px;
+        width: 40%;
+        height: 50%;
+    }
+    .titulo{
+        font-size: medium;
+        align-items: start;
+        /* font-weight: bold; */
+    }
+
+    .menu-hamburguesa{
+        display: none;
+    }
+    
+    ul{
+        display: flex;
+        flex-direction: column;
+        color: var(--colorLetraboton);
+        justify-content: start;
+        list-style: none;
+        font-weight: 500;
+        padding-left: 0px;
+        margin-top: 40px;
+        gap: 20px;
+    }
+    
+    .container-card{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 0px;
+    }
+
+    .card{
+        width: 30%;
+    }
+
+    footer{
+        height: 20vh;
+    }
+
+    footer span{
+        margin-left: 20px;
+        font-size: 10px;
+        justify-content: center;
     }
 }
-
-
-@media (min-width :  768px) {
-    .contendero-grid{
-    grid-template-columns: 1fr 1fr 1fr 
-    }
-}
-
-@media (min-width :  992px) {
-    .contendero-grid{
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    }
-}  
