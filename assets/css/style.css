@@ -17,19 +17,27 @@
 
 body{
     margin: 0px !important;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
-.contendero-grid{
+.grid-container{
     width: 100%;
     height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60px 60px 1fr 60px;
+    grid-template-areas: 
+    'nav'
+    'filtro'
+    'productos'
+    'footer';
 }
 
 nav {
     grid-area: nav;
     background: var(--fondoNav);
     width: 100%;
-    height: 30px;
+    height: 50px;
 }
 
 nav{
@@ -56,6 +64,11 @@ nav .menu-hamburguesa{
     padding: 10px;
 }
 
+section{
+    grid-area: filtro;
+
+}
+
 .filterContainer{
     display: flex;
     flex-direction: column;
@@ -74,7 +87,7 @@ nav .menu-hamburguesa{
 }
 
 main {
-    grid-area: main-section;
+    grid-area: productos;
     padding: 10px;
 }
 
@@ -126,7 +139,7 @@ main {
 }
 
 footer {
-    grid-area: pie-de-pagina;
+    grid-area: footer;
     width: 100%;
     background: var(--fondoNav);
     color: var(--fondoBusqueda);
@@ -148,30 +161,15 @@ footer span{
     gap: 10px 0px;
 }
 
-
-/* .grid-container{
-    display: grid;
-    grid-template-areas: 
-    'nav nav'
-    'main main'
-    'footer footer';
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 10% 80% 10%;
-} */
-
-
-/* .contendero-grid{
-    display: grid;
-    img{
-        width: 100%;
-    }
-    grid-template-columns: 1fr
-}
+/*Medias Query*/
 
 @media (min-width :  567px) {
     .contendero-grid{
     grid-template-columns: 1fr 1fr
     }
+}
+
+
 @media (min-width :  768px) {
     .contendero-grid{
     grid-template-columns: 1fr 1fr 1fr 
@@ -182,29 +180,4 @@ footer span{
     .contendero-grid{
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
-}  */
-
-/* <!-- mediaQuery menu --> */
-
-  /* div {
-    Dispositivo Movil First Mobile
-    display: grid;
-    height: 100vh;
-    border: 1px solid black;
-    grid-template-rows: 1fr 10fr 1fr;
-    grid-template-areas:
-    "menu"
-    "seccion-principal"
-    "pie-de-pagina";
-    }
-   */
-
-/* @media (min-width: 992px) {
-        div{
-        grid-template-areas:
-        "menu seccion-principal"
-        "menu seccion-principal"
-        "menu pie-de-pagina";
-        grid-template-columns: 6rem 1fr;
-        }
-    } */
+}  
